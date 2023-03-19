@@ -1,19 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
-import products from './src/data/products';
-import ProducrScreen from './src/screens/ProducrScreen';
-import ProductDetailScreen from './src/screens/ProductDetailScreen';
+import { Provider } from 'react-redux';
+import Navigation from './src/navigation';
+import { store } from './src/store/store';
+
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-{/* <ProducrScreen/> */}
-<ProductDetailScreen/>
+    <Provider store={store}>
+ 
+<Navigation/>
 
     
       <StatusBar style="auto" />
-    </View>
+   
+    </Provider>
   );
 }
 
